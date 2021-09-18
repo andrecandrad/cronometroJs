@@ -1,0 +1,88 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(21, 19, 32);
+    font-family: 'Poppins', sans-serif;
+}
+
+#cronometro {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+#cronometro::before {
+    content: "";
+    height: 150%;
+    width: 150%;
+    position: absolute;
+    background: conic-gradient( rgb(253, 0, 76, 2), rgb(254, 144, 0, 2), rgb(255, 240, 32, 2), rgb(62, 223, 75, 2), rgb(51, 99, 255, 2), rgb(177, 2, 183, 2), rgb(253, 0, 76, 2));
+    left: -25%;
+    top: -25%;
+    animation: spin 3s infinite linear;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+#cronometro::after {
+    content: "";
+    position: absolute;
+    background-color: #151320;
+    height: 93%;
+    width: 93%;
+    top: 3.5%;
+    left: 3.5%;
+    border-radius: 50%;
+    color: #ffffff;
+    letter-spacing: 6px;
+    font-size: 3em;
+}
+
+#timer {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    color: #ffffff98;
+    letter-spacing: 6px;
+    font-size: 3em;
+    font-weight: 700;
+    user-select: none;
+}
+
+#icones {
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translateX(-50%);
+}
+
+ion-icon {
+    font-size: 64px;
+    color: rgb(255, 255, 255, 0.4);
+    margin-right: 30px;
+    margin-left: 30px;
+    transition: 600ms;
+    cursor: pointer;
+}
+
+ion-icon:hover {
+    color: #ffffff;
+    transition: 600ms;
+}
